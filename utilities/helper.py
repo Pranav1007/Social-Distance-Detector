@@ -39,27 +39,3 @@ def webcam():
                 break
         else:
             print("Video Camera Error. Please try again later.")
-
-
-# def image(path):
-#     img = cv2.imread(path)
-#     main_func(img)
-#     cv2.waitKey(0)
-
-
-# def video(path):
-#     cap = cv2.VideoCapture(path)
-#     while True:
-#         success, img = cap.read()
-#         main_func(img)
-#         if cv2.waitKey(1) & 0xFF == ord('q'):
-#             break
-
-
-# def webcam():
-#     cap = cv2.VideoCapture(0)
-#     while True:
-#         success, img = cap.read()
-#         main_func(img)
-#         if cv2.waitKey(1) & 0xFF == ord('q'):
-#             break

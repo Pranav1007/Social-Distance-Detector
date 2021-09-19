@@ -23,3 +23,6 @@ BLUE = (255, 0, 0)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GREEN = (0, 255, 0)
+
+# True if GPU is used for computation
+USE_GPU = False
