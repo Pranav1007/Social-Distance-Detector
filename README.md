@@ -1,1 +1,99 @@
-# Social-Distance-Detector
+<h1 align="center"> Social Distance Detector </h1>
+<h2 align="center"> A Real-Time Social Distancing tool </h2>
+
+[![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+
+## Table of Contents
+* **[Motivation](#motivation)**
+* **[YOLO Theory](#yolo-theory)**
+* **[Sample Demo](#sample-demo)**
+* **[Tech Stack](#tech-stack)**
+* **[Functionalities](#functionalities)**
+* **[To Do and Further Improvements](#to-do-and-further-improvements)**
+* **[Requriements](#requirements)**
+* **[Run Locally](#run-locally)**
+* **[Contributors](#contributors)**
+
+## Motivation
+
+## YOLO Theory
+
+## Sample Demo
+
+## Tech Stack
+* Python
+
+
+## Functionalities
+* Detect people who are practicing social distancing and those who are not.
+* Draw a green coloured box around those who are practicing social distancing and red for those who are not.
+* Display the following information :
+  * The threshold values used for detection.
+  * Number of people recogonized.
+  * Number of people who are practicing social distancing.
+  * Number of people who are not practicing social distancing.
+
+## To Do and Further Improvements
+- [x] Using YOLO for Image Detection
+- [x] Calculate the distance between people and categorise them as safe and unsafe
+- [x] Draw green couloured boxes for those who follow social distancing and red for those who don't.
+- [x] Detect and draw boxes for image, video and live stream.
+- [ ] Adding Birds-Eye View for the Video
+- [ ] Work on the minimum pixel distance for different media.
+- [ ] Assign a score at the end of the video/stream for every person based on the time they were not socially distanced.
+
+## Requirements
+The following dependencies and modules(python) are required, to run this locally 
+* os
+* math
+* numpy==1.21.2
+* opencv-python==4.5.3.56
+
+**To install the requirements run:**
+```python
+$ pip install -r requirements.txt
+```
+
+## Run Locally
+
+## Contributors
+<table>
+  <tr>
+    <td align="center"><img src="https://avatars.githubusercontent.com/u/70643852?s=96&v=4" width="100px;" height="100px;" alt=""/><br/><sub><b>Pranav B Kashyap</b></sub></a><br/><p align="center">
+      <p align="center">
+        <a href="https://www.linkedin.com/in/pranav-b-kashyap-1994001b6/" alt="Linkedin">
+          <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width = "30">
+        </a>
+        <a href="https://github.com/Pranav1007" alt="Github">
+          <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width = "30">
+        </a>
+      </p>
+    </td>
+    <td align="center"><img src="https://avatars.githubusercontent.com/u/76976349?v=4" width="100px;" height="100px;" alt=""/><br/><sub><b>Prakhar Singh</b></sub></a><br/><p align="center">
+      <p align="center">
+        <a href="" alt="Linkedin">
+          <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width = "30">
+        </a>
+        <a href="https://github.com/whattheprak" alt="Github">
+          <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width = "30">
+        </a>
+      </p>
+    </td>
+    <td align="center"><img src="https://avatars.githubusercontent.com/u/56482375?v=4" width="100px;" height="100px;" alt=""/><br/><sub><b>Avi Tewari</b></sub></a><br/><p align="center">
+      <p align="center">
+        <a href="" alt="Linkedin">
+          <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width = "30">
+        </a>
+        <a href="https://github.com/AviTewari" alt="Github">
+          <img src="http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width = "30">
+        </a>
+      </p>
+    </td>
+  </tr>
+</table>
+
+
+## License 
+[![License](https://img.shields.io/badge/License-Apache%202.0-red.svg)](https://opensource.org/licenses/Apache-2.0)
+<br/>
+This project is under the Apache-2.0 License License. See [LICENSE](LICENSE) for Details.
