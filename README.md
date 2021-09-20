@@ -12,6 +12,7 @@
 * **[To Do and Further Improvements](#to-do-and-further-improvements)**
 * **[Requriements](#requirements)**
 * **[Run Locally](#run-locally)**
+* **[License](#license)**
 * **[Contributors](#contributors)**
 
 ## Motivation
@@ -63,23 +64,53 @@ $ pip install -r requirements.txt
 ```
 
 ## Run Locally
-- Clone the GitHub repository
+- **Clone the GitHub repository**
 ```python
 $ git clone git@github.com:Pranav1007/Social-Distance-Detector.git
 ```
-- Move to the Project Directory
+
+- **Move to the Project Directory**
 ```python
 $ cd Social-Distance-Detector
 ```
-- Create a Virtual Environment(Optional) and Install the [requirements](requirements.txt)
+
+- **Create a Virtual Environment(Optional)**
+
+   * Install Virtualenv using pip (If it is not installed)
+   ```python
+    $ pip install virtualenv
+    ```
+   * Create the Virtual Environment
+   ```python
+   $ virtualenv sdd
+   ```
+   * Activate the Virtual Environment 
+   
+      * In MAC OS/Linux 
+      ```python
+      $ source sdd/bin/activate
+      ```
+      * In Windows
+      ```python
+      $ source sdd\Scripts\activate
+      ```
+
+   * Dectivate the Virtual Environment (after you are done)
+   ```python
+   $ deactivate
+   ```
+
+- **Install the [requirements](requirements.txt)**
 ```python
 $ pip install -r requirements.txt
 ```
-- Run the python script [run.py](run.py) along with the appropriate arguements
+
+- **Run the python script [run.py](run.py) along with the appropriate arguements**
 ```python
 $ python3 run.py -i v -p media/test.mp4
 ```
-- Usage
+
+- **Usage**
 ```python
 """
     Usage:
@@ -91,7 +122,8 @@ $ python3 run.py -i v -p media/test.mp4
       -p PATH --path PATH       Path of the Media File (For webcam enter space)
 """
 ```
-- Other options to Edit
+
+- **Other options to Edit**
 ```python
    """
        You can go to the utilities/config.py and change the threshold values based on the video and system requirements.
@@ -103,6 +135,11 @@ $ python3 run.py -i v -p media/test.mp4
    # If you want to change the Non Maximum Supression Threshold or Confidence Threshold
    Modify the NMS_THRESH or CONF_THRESH values respectively
 ```
+
+## License 
+[![License](https://img.shields.io/badge/License-Apache%202.0-red.svg)](https://opensource.org/licenses/Apache-2.0)
+<br/>
+This project is under the Apache-2.0 License License. See [LICENSE](LICENSE) for Details.
 
 ## Contributors
 <table>
@@ -139,9 +176,3 @@ $ python3 run.py -i v -p media/test.mp4
     </td>
   </tr>
 </table>
-
-
-## License 
-[![License](https://img.shields.io/badge/License-Apache%202.0-red.svg)](https://opensource.org/licenses/Apache-2.0)
-<br/>
-This project is under the Apache-2.0 License License. See [LICENSE](LICENSE) for Details.
