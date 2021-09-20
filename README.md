@@ -119,7 +119,7 @@ $ python3 run.py -i v -p media/test.mp4
     optional arguements:
       -h --help                 Show this screen and exit.
       -m MEDIA --media MEDIA    Media Type (image(or i), video(or v), webcam(or w))
-      -p PATH --path PATH       Path of the Media File (For webcam enter space)
+      -p PATH --path PATH       Path of the Media File (For webcam enter any character)
 """
 ```
 
