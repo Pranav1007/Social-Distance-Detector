@@ -19,11 +19,11 @@
 ## YOLO Theory
 
 ## Detection Output
-<h3 align="center">Video 1</h3>
+<h3 align="center">A siingle frame from Video 1</h3>
 
 ![Detection Output 1](https://github.com/Pranav1007/Social-Distance-Detector/blob/main/media/static/Det%20OP%201.png)
 
-<h3 align="center">Video 2</h3>
+<h3 align="center">A single frame from Video 2</h3>
 
 ![Detection Output 2](https://github.com/Pranav1007/Social-Distance-Detector/blob/main/media/static/Det%20OP%202.png)
 
@@ -89,7 +89,19 @@ $ python3 run.py -i v -p media/test.mp4
       -h --help                 Show this screen and exit.
       -m MEDIA --media MEDIA    Media Type (image(or i), video(or v), webcam(or w))
       -p PATH --path PATH       Path of the Media File (For webcam enter space)
-    """
+"""
+```
+- Other options to Edit
+```python
+   """
+       You can go to the utilities/config.py and change the threshold values based on the video and system requirements.
+   """
+   # If you want to use GPU:
+   Set USE_GPU = True
+   # If you want to increase or decrease the minimum threshold distance
+   Modify the DIST_THRES value
+   # If you want to change the Non Maximum Supression Threshold or Confidence Threshold
+   Modify the NMS_THRESH or CONF_THRESH values respectively
 ```
 
 ## Contributors
