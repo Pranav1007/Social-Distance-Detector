@@ -20,7 +20,7 @@
 ## YOLO Theory
 
 ## Detection Output
-<h3 align="center">A siingle frame from Video 1</h3>
+<h3 align="center">A single frame from Video 1</h3>
 
 ![Detection Output 1](https://github.com/Pranav1007/Social-Distance-Detector/blob/main/media/static/Det%20OP%201.png)
 
