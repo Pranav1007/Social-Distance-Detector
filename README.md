@@ -6,7 +6,7 @@
 ## Table of Contents
 * **[Motivation](#motivation)**
 * **[YOLO Theory](#yolo-theory)**
-* **[Sample Demo](#sample-demo)**
+* **[Detection Output](#detection-output)**
 * **[Tech Stack](#tech-stack)**
 * **[Functionalities](#functionalities)**
 * **[To Do and Further Improvements](#to-do-and-further-improvements)**
@@ -18,7 +18,14 @@
 
 ## YOLO Theory
 
-## Sample Demo
+## Detection Output
+<h3 align="center">Video 1</h3>
+
+![Detection Output 1](https://github.com/Pranav1007/Social-Distance-Detector/blob/main/media/static/Det%20OP%201.png)
+
+<h3 align="center">Video 2</h3>
+
+![Detection Output 2](https://github.com/Pranav1007/Social-Distance-Detector/blob/main/media/static/Det%20OP%202.png)
 
 ## Tech Stack
 * Python
@@ -44,8 +51,9 @@
 
 ## Requirements
 The following dependencies and modules(python) are required, to run this locally 
-* os
+* os, sys, argparse
 * math
+* mimetypes
 * numpy==1.21.2
 * opencv-python==4.5.3.56
 
@@ -55,6 +63,34 @@ $ pip install -r requirements.txt
 ```
 
 ## Run Locally
+- Clone the GitHub repository
+```python
+$ git clone git@github.com:Pranav1007/Social-Distance-Detector.git
+```
+- Move to the Project Directory
+```python
+$ cd Social-Distance-Detector
+```
+- Create a Virtual Environment(Optional) and Install the [requirements](requirements.txt)
+```python
+$ pip install -r requirements.txt
+```
+- Run the python script [run.py](run.py) along with the appropriate arguements
+```python
+$ python3 run.py -i v -p media/test.mp4
+```
+- Usage
+```python
+"""
+    Usage:
+      usage: run.py [-h] [-m MEDIA] [-p PATH]
+
+    optional arguements:
+      -h --help                 Show this screen and exit.
+      -m MEDIA --media MEDIA    Media Type (image(or i), video(or v), webcam(or w))
+      -p PATH --path PATH       Path of the Media File (For webcam enter space)
+    """
+```
 
 ## Contributors
 <table>
