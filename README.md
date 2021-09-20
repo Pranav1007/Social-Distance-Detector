@@ -1,5 +1,5 @@
 <h1 align="center"> Social Distance Detector </h1>
-<h2 align="center"> A Real-Time Social Distancing tool </h2>
+<h2 align="center"> A Real-Time Social Distance Monitoring Tool </h2>
 
 [![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
@@ -30,7 +30,6 @@
 
 ## Tech Stack
 * Python
-
 
 ## Functionalities
 * Detect people who are practicing social distancing and those who are not.
@@ -74,7 +73,7 @@ $ git clone git@github.com:Pranav1007/Social-Distance-Detector.git
 $ cd Social-Distance-Detector
 ```
 
-- **Create a Virtual Environment(Optional)**
+- **Create a Virtual Environment (Optional)**
 
    * Install Virtualenv using pip (If it is not installed)
    ```python
@@ -94,20 +93,15 @@ $ cd Social-Distance-Detector
       ```python
       $ source sdd\Scripts\activate
       ```
-
-   * Dectivate the Virtual Environment (after you are done)
-   ```python
-   $ deactivate
-   ```
-
+  
 - **Install the [requirements](requirements.txt)**
 ```python
-$ pip install -r requirements.txt
+(sdd) $ pip install -r requirements.txt
 ```
 
 - **Run the python script [run.py](run.py) along with the appropriate arguements**
 ```python
-$ python3 run.py -i v -p media/test.mp4
+(sdd) $ python3 run.py -i v -p media/test.mp4
 ```
 
 - **Usage**
@@ -134,6 +128,11 @@ $ python3 run.py -i v -p media/test.mp4
    Modify the DIST_THRES value
    # If you want to change the Non Maximum Supression Threshold or Confidence Threshold
    Modify the NMS_THRESH or CONF_THRESH values respectively
+```
+
+- **Dectivate the Virtual Environment (after you are done)**
+```python
+(sdd) $ deactivate
 ```
 
 ## License 
