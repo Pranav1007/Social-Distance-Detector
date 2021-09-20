@@ -1,7 +1,7 @@
 import math
 import numpy as np
 from cv2 import cv2
-from .config import WHT, CONF_THRESH, NMS_THRESH
+from .config import WHT, CONF_THRESH, NMS_THRESH, DIS_THRESH
 from .config import RED, BLUE, GREEN, BLACK, WHITE
 from .model import load_model
 
@@ -78,7 +78,7 @@ def findObjects(outputs, img):
             for k in range(len(centroids)):
                 c = centroids[k]
                 # If the distance between two images(detected near each other) is less than 200 pixels.
-                if(get_distance(c[0], centroid[0], c[1], centroid[1]) <= 200):
+                if(get_distance(c[0], centroid[0], c[1], centroid[1]) <= DIS_THRESH):
                     boxColours[k] = 1									# Since distance is less they are not social distancing
                     colour = 1											# Initialse colour flag to 1 (Red or Danger)
                     break									    		# We can break out as the person detected is dangerous.

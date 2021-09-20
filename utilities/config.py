@@ -14,6 +14,9 @@ CONF_THRESH = 0.5
 # If the threshold is very low, almost all the boxes will be removed
 NMS_THRESH = 0.3
 
+# Pixel Distance to categorise people into two groups: those who are socially distanced and those who are not
+DIS_THRESH = 120
+
 # Width and Height in Pixels
 WHT = 416
 
