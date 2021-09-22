@@ -36,7 +36,7 @@
 * Draw a green coloured box around those who are practicing social distancing and red for those who are not.
 * Display the following information :
   * The threshold values used for detection.
-  * Number of people recogonized.
+  * Number of people recognized.
   * Number of people who are practicing social distancing.
   * Number of people who are not practicing social distancing.
 
