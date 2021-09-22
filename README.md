@@ -43,7 +43,7 @@
 ## To Do and Further Improvements
 - [x] Using YOLO for Image Detection
 - [x] Calculate the distance between people and categorise them as safe and unsafe
-- [x] Draw green couloured boxes for those who follow social distancing and red for those who don't.
+- [x] Draw green coloured boxes for those who follow social distancing and red for those who don't.
 - [x] Detect and draw boxes for image, video and live stream.
 - [ ] Adding Birds-Eye View for the Video
 - [ ] Work on the minimum pixel distance for different media.
