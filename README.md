@@ -156,7 +156,7 @@ This project is under the Apache-2.0 License License. See [LICENSE](LICENSE) for
     </td>
     <td align="center"><img src="https://avatars.githubusercontent.com/u/76976349?v=4" width="100px;" height="100px;" alt=""/><br/><sub><b>Prakhar Singh</b></sub></a><br/><p align="center">
       <p align="center">
-        <a href="" alt="Linkedin">
+        <a href="https://www.linkedin.com/in/prakhar-singh-0bab09202/" alt="Linkedin">
           <img src="http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width = "30">
         </a>
         <a href="https://github.com/whattheprak" alt="Github">
