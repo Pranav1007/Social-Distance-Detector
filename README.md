@@ -21,6 +21,10 @@ The current COVID-19 pandemic is showing negative effects on human health as wel
 ## YOLO Theory
 
 ## Detection Output
+<p align="center">
+  <img src="https://github.com/Pranav1007/Social-Distance-Detector/blob/main/media/static/Output.gif" alt="animated" />
+</p>
+<br/>
 <h3 align="center">A single frame from Video 1</h3>
 
 ![Detection Output 1](https://github.com/Pranav1007/Social-Distance-Detector/blob/main/media/static/Det%20OP%201.png)
