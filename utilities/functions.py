@@ -29,10 +29,10 @@ def main_func(img):
         Function to obtain the outpur output from the yolo model
     """
     blob = cv2.dnn.blobFromImage(img, 1/255, (WHT, WHT), [0, 0, 0], crop=False)			# Yolo only accepts image of blob(Binary Large Object) format so we convert the image into blob format
-    modelNet.setInput(blob)																# Setting the input image for the model
-    layers = modelNet.getLayerNames()													# Obtain the names of all the layers of our network (Architecture)
+    modelNet.setInput(blob)									# Setting the input image for the model
+    layers = modelNet.getLayerNames()			    					# Obtain the names of all the layers of our network (Architecture)
     outputNames = [layers[i[0]-1] for i in modelNet.getUnconnectedOutLayers()]			# Get the names of only the output layers of the model
-    outputs = modelNet.forward(outputNames)     										# Output layers of our Network
+    outputs = modelNet.forward(outputNames)                 					# Output layers of our Network
     return outputs
 
 
@@ -40,15 +40,15 @@ def findObjects(outputs, img):
     """
         Function to detect people and draw boxes around them based on whether they are social distancing or not, for the given media.
     """
-    hT, wT, cT = img.shape		# Based on the image size we define the height and width.
+    hT, wT, cT = img.shape		        # Based on the image size we define the height and width.
     boundBox = [] 				# To keep track of all the bounding Boxes.
     classIds = []				# Class IDs of all the predictions (0 for person).
-    confidenceVal = []		    # Confidence value of image detected (b/w 0 and 1).
+    confidenceVal = []		                # Confidence value of image detected (b/w 0 and 1).
     detectBox = []				# All the bounding boxes which we will have to print.
     centroids = []				# To keep track of the midpoint of the image detected.
     boxColours = []				# Based on the distance it will either be red or green.
     good = 0					# Number of people who are maintaining optimal distance.
-    bad = 0						# Number of people who are not maintaining optimal distance.
+    bad = 0					# Number of people who are not maintaining optimal distance.
 
     for output in outputs:
         for detection in output:
@@ -59,32 +59,30 @@ def findObjects(outputs, img):
                 # Width and Height
                 w, h = int(detection[2] * wT), int(detection[3] * hT)
                 x, y = int((detection[0] * wT) - w/2), int((detection[1] * hT) - h/2)
-                boundBox.append([x, y, w, h]) 					# Append the dimensions of the image detected into the BoundBox Array
-                classIds.append(classId)						# Append the classId of the image detected into the classId Array
-                confidenceVal.append(float(confidence)) 		# Append the (predicted) confidence value of the image detected into the ConfidenceVal Array
+                boundBox.append([x, y, w, h]) 					
+                classIds.append(classId)						
+                confidenceVal.append(float(confidence)) 
 
     # Suppress all the overlapping, weak and redundant bounding boxes based on the confidence scores. This process is called Non-Maximum Suppression.
     indices = cv2.dnn.NMSBoxes(boundBox, confidenceVal, CONF_THRESH, NMS_THRESH)
 
-    # We iterate over all the boundBoxes which after performing NMS
+	# Iterate over all the boundBoxes after performing NMS
     for i in range(len(boundBox)):
         if i in indices:
-            x, y, w, h = boundBox[i]								# Obtain the dimensions of the current Bound Box
-            centroid = calCentroid(x, y, x + w, y + h) 				# Calculate and store the centroid value
-            detectBox.append([x, y, x + w, y + h, centroid])		# Append the box dimensions to the detectBox matrix
-            colour = 0					    						# Initialise colour flag to 0 (Person is safe by default)
+            x, y, w, h = boundBox[i]								
+            centroid = calCentroid(x, y, x + w, y + h) 				
+            detectBox.append([x, y, x + w, y + h, centroid])		
+            colour = 0					    						
 
-            # We will now compare this image with all the other images detected and see if the person is at a safe distance
             for k in range(len(centroids)):
                 c = centroids[k]
-                # If the distance between two images(detected near each other) is less than 200 pixels.
                 if(get_distance(c[0], centroid[0], c[1], centroid[1]) <= DIS_THRESH):
-                    boxColours[k] = 1									# Since distance is less they are not social distancing
-                    colour = 1											# Initialse colour flag to 1 (Red or Danger)
-                    break									    		# We can break out as the person detected is dangerous.
+                    boxColours[k] = 1									
+                    colour = 1											
+                    break									    		
 
-            centroids.append(centroid)		# Append the centroid value to the centroid array.
-            boxColours.append(colour)		# Append the colour value to the colour array. Later used while drawing Bound Box.
+            centroids.append(centroid)		
+            boxColours.append(colour)		
 
     # Drawing the Bound Boxes
     for i in range(len(detectBox)):
@@ -92,18 +90,18 @@ def findObjects(outputs, img):
         x, y, w, h = box[0], box[1], box[2], box[3]
         if(boxColours[i] == 0):
             label = "SAFE"
-            cv2.rectangle(img, (x, y), (w, h), GREEN, 2)										# Draw a Bound Box (Green)
-            cv2.circle(img, (int(centroids[i][0]), int(centroids[i][1])), 4, GREEN, 2)          # Draw a circle at the centroid(Easier to identify the person)
+            cv2.rectangle(img, (x, y), (w, h), GREEN, 2)										
+            cv2.circle(img, (int(centroids[i][0]), int(centroids[i][1])), 4, GREEN, 2)          
             cv2.circle(img, (int(centroids[i][0]), int(centroids[i][1])), 8, GREEN, 2)
-            cv2.putText(img, label, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, BLACK, 2)			# Put the label based on the distance
-            good += 1		                                                                    # Increment number of people who are safe
+            cv2.putText(img, label, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, BLACK, 2)			
+            good += 1		                                                                    
         else:
             label = "DANGER"
-            cv2.rectangle(img, (x, y), (w, h), RED, 2)					        				# Draw a Bound Box (Red)
-            cv2.circle(img, (int(centroids[i][0]), int(centroids[i][1])), 4, RED, 2)	        # Draw a circle at the centroid(Easier to identify the person)
+            cv2.rectangle(img, (x, y), (w, h), RED, 2)					        				
+            cv2.circle(img, (int(centroids[i][0]), int(centroids[i][1])), 4, RED, 2)	        
             cv2.circle(img, (int(centroids[i][0]), int(centroids[i][1])), 8, RED, 2)
-            cv2.putText(img, label, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, BLACK, 2)			# Put the label based on the distance
-            bad += 1		                                                                    # Increment number of people who are not safe
+            cv2.putText(img, label, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, BLACK, 2)			
+            bad += 1		                                                                    
 
     # Printing details of the image on the top left corner.
     text = f'Number of persons identified: {str(bad + good)}'
