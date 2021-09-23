@@ -108,7 +108,7 @@ $ cd Social-Distance-Detector
 
 - **Run the python script [run.py](run.py) along with the appropriate arguements**
 ```python
-(sdd) $ python3 run.py -i v -p media/test.mp4
+(sdd) $ python3 run.py -m v -p media/test.mp4
 ```
 
 - **Usage**
