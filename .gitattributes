@@ -1,3 +1,0 @@
-*.weights filter=lfs diff=lfs merge=lfs -text
-*.cfg filter=lfs diff=lfs merge=lfs -text
-*.names filter=lfs diff=lfs merge=lfs -text
