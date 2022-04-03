@@ -75,6 +75,11 @@ $ pip install -r requirements.txt
 $ git clone git@github.com:Pranav1007/Social-Distance-Detector.git
 ```
 
+- **Pull all the git lfs files**
+```python
+$ git lfs fetch --all
+```
+
 - **Move to the Project Directory**
 ```python
 $ cd Social-Distance-Detector
